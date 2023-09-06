@@ -376,10 +376,21 @@ void main() {
 						field[minoY + i][minoX + j] |= minoShapes[minoType][minoAngle][i][j];
 				for (size_t i = 0; i < FIELD_HEIGHT-1; i++){
 					bool lineFill = true;
-					for (size_t j = 1; j < FIELD_WIDTH-1; j++){
-						if (!)
+					for (size_t j = 1; j < FIELD_WIDTH-1; j++)
+					{
+						if (!field[i][j])
 						{
-
+							lineFill = false;
+						}
+					}
+					if (lineFill)
+					{
+						/*for (size_t j = 1; j < FIELD_WIDTH - 1; j++) {
+							field[i][j] = 0;
+						}*/
+						for (size_t j = i; 0<j; j--) {
+							memcpy(field[j], field[j - 1], FIELD_WIDTH);
+							//field[i+1][j] = field[i][j];
 						}
 					}
 				}
