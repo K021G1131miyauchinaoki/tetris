@@ -374,6 +374,7 @@ void main() {
 				for (size_t i = 0; i < MINO_HEIGHT; i++)
 					for (size_t j = 0; j < MINO_WIDHT; j++)
 						field[minoY + i][minoX + j] |= minoShapes[minoType][minoAngle][i][j];
+				//ƒ‰ƒCƒ“‚ª‚Å‚«‚½‚çÁ–Å‚³‚¹‚Ä1ƒ}ƒX‰º‚°‚é
 				for (size_t i = 0; i < FIELD_HEIGHT-1; i++){
 					bool lineFill = true;
 					for (size_t j = 1; j < FIELD_WIDTH-1; j++)
